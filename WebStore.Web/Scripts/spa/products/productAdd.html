@@ -1,0 +1,220 @@
+﻿<div class="">
+    <div class="page-title">
+        <div class="title_left">
+            <h3>Sản phẩm <small></small></h3>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="x_panel">
+                <div class="x_title">
+                    <h2>Thêm Sản phẩm<small></small></h2>
+                    <div class="box-tools pull-right">
+                        <button type="submit" class="btn btn-primary" title="Save" ng-click="onSave()">
+                            <i class="fa fa-save"></i>
+                        </button>
+                        <a ui-sref="products" class="btn btn-default" title="Cancel">
+                            <i class="fa fa-reply"></i>
+                        </a>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                    <form class="form-horizontal form-label-left" novalidate name="frmProduct">
+                        <div class="" role="tabpanel" data-example-id="togglable-tabs">
+                            <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+                                <li role="presentation" class="active">
+                                    <a href="#tab_content1" id="home-tab" role="tab" data-toggle="tab" aria-expanded="true" ng-click="tabclick($event)">Tổng quan</a>
+                                </li>
+                                <li role="presentation" class="">
+                                    <a href="#tab_content2" role="tab" id="profile-tab" data-toggle="tab" aria-expanded="false" ng-click="tabclick($event)">Dữ liệu</a>
+                                </li>
+                                <li role="presentation" class="">
+                                    <a href="#tab_content3" role="tab" id="profile-tab2" data-toggle="tab" aria-expanded="false" ng-click="tabclick($event)">Hình ảnh</a>
+                                </li>
+                            </ul>
+                            <div id="myTabContent" class="tab-content">
+                                <div role="tabpanel" class="tab-pane fade active in" id="tab_content1" aria-labelledby="home-tab">
+                                    <div class="item form-group">
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">
+                                            Tên Sản phẩm <span class="required">*</span>
+                                        </label>
+                                        <div class="col-md-9 col-sm-9 col-xs-12">
+                                            <input id="name" class="form-control col-md-7 col-xs-12" ng-model="product.Name" ng-change="getSeoTitle()" placeholder="Tên Sản phẩm" required="required" type="text">
+                                        </div>
+                                    </div>
+                                    <div class="item form-group">
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="alias">
+                                            Tiêu đề SEO <span class="required"></span>
+                                        </label>
+                                        <div class="col-md-9 col-sm-9 col-xs-12">
+                                            <input id="alias" class="form-control col-md-7 col-xs-12" ng-model="product.Alias" type="text">
+                                        </div>
+                                    </div>
+                                    <div class="item form-group">
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="description">
+                                            Mô tả ngắn <span class="required"></span>
+                                        </label>
+                                        <div class="col-md-9 col-sm-9 col-xs-12">
+                                            <textarea id="description" class="form-control col-md-7 col-xs-12" ng-model="product.Description"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="item form-group">
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="content">
+                                            Nội dung <span class="required"></span>
+                                        </label>
+                                        <div class="col-md-9 col-sm-9 col-xs-12">
+                                            <textarea id="content" class="form-control col-md-7 col-xs-12" ng-model="product.Content" type="text" ckeditor="ckeditorOptions"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Danh mục</label>
+                                        <div class="col-md-9 col-sm-9 col-xs-12">
+                                            <select class="form-control" name="categoryID" ng-model="product.CategoryID" ng-options="option.ID as option.Name for option in productCategories">
+                                                <option value="">Chọn danh mục</option>
+                                            </select>
+                                        </div>
+                                        <input type="hidden" name="parentId" ng-model="product.CategoryID" />
+                                    </div>
+                                    <div class="item form-group">
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="metakeyword">
+                                            Mô tả từ khóa <span class="required"></span>
+                                        </label>
+                                        <div class="col-md-9 col-sm-9 col-xs-12">
+                                            <textarea id="metakeyword" class="form-control col-md-7 col-xs-12" ng-model="product.MetaKeyword"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="item form-group">
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="metadescription">
+                                            Từ khóa <span class="required"></span>
+                                        </label>
+                                        <div class="col-md-9 col-sm-9 col-xs-12">
+                                            <textarea id="metadescription" class="form-control col-md-7 col-xs-12" ng-model="product.MetaDescription"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="item form-group">
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="tags">
+                                            Tags <span class="required"></span>
+                                        </label>
+                                        <div class="col-md-9 col-sm-9 col-xs-12">
+                                            <input id="tags" class="form-control col-md-7 col-xs-12" ng-model="product.Tags" type="text">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="tab_content2" aria-labelledby="profile-tab">
+                                    <div class="item form-group">
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="price">
+                                            Giá <span class="required"></span>
+                                        </label>
+                                        <div class="col-md-9 col-sm-9 col-xs-12">
+                                            <input id="price" class="form-control col-md-7 col-xs-12" ng-model="product.Price" type="number">
+                                        </div>
+                                    </div>
+                                    <div class="item form-group">
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="originalPrice">
+                                            Giá gốc <span class="required"></span>
+                                        </label>
+                                        <div class="col-md-9 col-sm-9 col-xs-12">
+                                            <input id="originalPrice" class="form-control col-md-7 col-xs-12" ng-model="product.OriginalPrice" type="number">
+                                        </div>
+                                    </div>
+                                    <div class="item form-group">
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="promotionPrice">
+                                            Giá khuyến mãi <span class="required"></span>
+                                        </label>
+                                        <div class="col-md-9 col-sm-9 col-xs-12">
+                                            <input id="promotionPrice" class="form-control col-md-7 col-xs-12" ng-model="product.PromotionPrice" type="number">
+                                        </div>
+                                    </div>
+                                    <div class="item form-group">
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="quantity">
+                                            Số lượng <span class="required"></span>
+                                        </label>
+                                        <div class="col-md-9 col-sm-9 col-xs-12">
+                                            <input id="quantity" class="form-control col-md-7 col-xs-12" ng-model="product.Quantity" type="number">
+                                        </div>
+                                    </div>
+                                    <div class="item form-group">
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="waranty">
+                                            Bảo hành (tháng) <span class="required"></span>
+                                        </label>
+                                        <div class="col-md-9 col-sm-9 col-xs-12">
+                                            <input id="waranty" class="form-control col-md-7 col-xs-12" ng-model="product.Waranty" type="number">
+                                        </div>
+                                    </div>
+
+                                    <div class="item form-group">
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="homefFag">
+                                            <span class="required"></span>
+                                        </label>
+                                        <div class="col-md-9 col-sm-9 col-xs-12">
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" class="icheckbox_flat-green checked" checked="checked" ng-model="product.HomeFlag"> Hiển thị Trang chủ
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item form-group">
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="hotFlag">
+                                            <span class="required"></span>
+                                        </label>
+                                        <div class="col-md-9 col-sm-9 col-xs-12">
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" class="icheckbox_flat-green checked" checked="checked" ng-model="product.HotFlag"> Sản phẩm hot
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item form-group">
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="status">
+                                            <span class="required"></span>
+                                        </label>
+                                        <div class="col-md-9 col-sm-9 col-xs-12">
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input type="checkbox" class="icheckbox_flat-green checked" checked="checked" ng-model="product.Status"> Trạng thái
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="tab_content3" aria-labelledby="profile-tab">
+                                    <div class="item form-group">
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="image">
+                                            Hình ảnh <span class="required"></span>
+                                        </label>
+                                        <div class="col-md-9 col-sm-9 col-xs-12">
+                                            <img ng-src="{{product.Image}}" width="150" height="150" />
+                                            <button ng-click="chooseImage()">Chọn ảnh</button>
+                                            <button ng-click="removeImage()">Xóa ảnh</button>
+                                        </div>
+                                    </div>
+                                    <div class="item form-group">
+                                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="moreImages">
+                                            Thêm hình ảnh <span class="required"></span>
+                                        </label>
+                                        <div class="col-md-9 col-sm-9 col-xs-12">
+                                            <button ng-click="chooseMoreImages()">Chọn ảnh</button>
+                                        </div>
+                                    </div>
+                                    <ul>
+                                        <li ng-repeat="image in moreImages">
+                                            <span class="image">
+                                                <img ng-src="{{image}}" width="100" height="100" />
+                                            </span>
+                                            <button class="btn btn-default" ng-click="removeMoreImage(image)">Xóa ảnh</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ln_solid"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

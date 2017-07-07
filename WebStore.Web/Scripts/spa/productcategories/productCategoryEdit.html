@@ -1,0 +1,121 @@
+﻿<div class="">
+    <div class="page-title">
+        <div class="title_left">
+            <h3>Danh mục Sản phẩm <small></small></h3>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="x_panel">
+                <div class="x_title">
+                    <h2>Chỉnh sửa Danh mục Sản phẩm<small></small></h2>
+                    <div class="box-tools pull-right">
+                        <button type="submit" class="btn btn-primary" title="Save" ng-click="onSave()">
+                            <i class="fa fa-save"></i>
+                        </button>
+                        <a ui-sref="productcategories" class="btn btn-default" title="Cancel">
+                            <i class="fa fa-reply"></i>
+                        </a>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                    <form class="form-horizontal form-label-left" novalidate>
+                        <span class="section">Thông tin cơ bản</span>
+                        <div class="item form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="name">
+                                Tên danh mục <span class="required">*</span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input id="name" class="form-control col-md-7 col-xs-12" ng-model="productCategory.Name" ng-change="getSeoTitle()" placeholder="Tên danh mục" required="required" type="text">
+                            </div>
+                        </div>
+                        <div class="item form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="alias">
+                                Tiêu đề SEO <span class="required"></span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input id="alias" class="form-control col-md-7 col-xs-12" ng-model="productCategory.Alias" type="text">
+                            </div>
+                        </div>
+                        <div class="item form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="description">
+                                Mô tả danh mục <span class="required"></span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input id="description" class="form-control col-md-7 col-xs-12" ng-model="productCategory.Desciprion" type="text">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12">Danh mục cha</label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <select class="form-control" name="parentId" ng-model="productCategory.ParentID" ng-options="option.ID as option.Name for option in parentCategories">
+                                    <option value="">Danh mục gốc</option>
+                                </select>
+                            </div>
+                            <input type="hidden" name="parentId" ng-model="productCategory.ParentID" />
+                        </div>
+                        <div class="item form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="displayOrder">
+                                Thứ tự <span class="required"></span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input id="displayOrder" class="form-control col-md-7 col-xs-12" ng-model="productCategory.DisplayOrder" type="number">
+                            </div>
+                        </div>
+                        <div class="item form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="image">
+                                Hình ảnh <span class="required"></span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input id="description" class="form-control col-md-7 col-xs-12" ng-model="productCategory.Image" type="text">
+                            </div>
+                        </div>
+                        <div class="item form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="metakeyword">
+                                Mô tả từ khóa <span class="required"></span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input id="metakeyword" class="form-control col-md-7 col-xs-12" ng-model="productCategory.MetaKeyword" type="text">
+                            </div>
+                        </div>
+                        <div class="item form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="metadescription">
+                                Từ khóa <span class="required"></span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <input id="metadescription" class="form-control col-md-7 col-xs-12" ng-model="productCategory.MetaDescription" type="text">
+                            </div>
+                        </div>
+                        <div class="item form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="metadescription">
+                                <span class="required"></span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" class="icheckbox_flat-green checked" checked="checked"> Hiển thị Trang chủ
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item form-group">
+                            <label class="control-label col-md-3 col-sm-3 col-xs-12" for="metadescription">
+                                <span class="required"></span>
+                            </label>
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" class="icheckbox_flat-green checked" checked="checked"> Trạng thái
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ln_solid"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -20,7 +20,12 @@ namespace WebStore.Service
         IEnumerable<Product> GetAllPaging(string keyword, int pageIndex, int pageSize, out int totalRow);
         IEnumerable<Product> GetAllByCategoryPaging(int categoryId, int pageIndex, int pageSize, out int totalRow);
         IEnumerable<Product> GetAllByTagPaging(string tag, int pageIndex, int pageSize, out int totalRow);
+
+        IEnumerable<Product> GetLastestProducts(int top);
+        IEnumerable<Product> GetTopProducts(int top);
+
         Product GetById(int id);
+        IEnumerable<Product> GetRelatedProducts(int id, int top);
         void Save();
     }
     public class ProductService : IProductService
@@ -92,7 +97,12 @@ namespace WebStore.Service
 
         public IEnumerable<Product> GetAllByCategoryPaging(int categoryId, int pageIndex, int pageSize, out int totalRow)
         {
-            return productRepository.GetMultiPaging(x => x.Status && x.CategoryID == categoryId, out totalRow, pageIndex, pageSize, new string[] { "ProductCategory" });
+            //return productRepository.GetMultiPaging(x => x.Status && x.CategoryID == categoryId, out totalRow, pageIndex, pageSize, new string[] { "ProductCategory" });
+            var query = productRepository.GetMulti(x => x.Status && x.CategoryID == categoryId);
+
+            totalRow = query.Count();
+
+            return query.Skip((pageIndex - 1) * pageSize).Take(pageSize);      
         } 
 
         public IEnumerable<Product> GetAllByTagPaging(string tag, int pageIndex, int pageSize, out int totalRow)
@@ -149,6 +159,22 @@ namespace WebStore.Service
                     productTagRepository.Add(productTag);
                 }
             }
+        }
+
+        public IEnumerable<Product> GetLastestProducts(int top)
+        {
+            return productRepository.GetMulti(x => x.Status).OrderByDescending(x => x.CreatedDate).Take(top);
+        }
+
+        public IEnumerable<Product> GetTopProducts(int top)
+        {
+            return productRepository.GetMulti(x => x.Status && x.HotFlag == true).OrderByDescending(x => x.CreatedDate).Take(top);
+        }
+
+        public IEnumerable<Product> GetRelatedProducts(int id, int top)
+        {
+            var product = productRepository.GetSingleById(id);
+            return productRepository.GetMulti(x => x.Status && x.CategoryID == product.CategoryID).OrderByDescending(x => x.CreatedDate).Take(top);
         }
     }
 }

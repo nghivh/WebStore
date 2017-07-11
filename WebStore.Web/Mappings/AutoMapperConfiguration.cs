@@ -21,6 +21,8 @@ namespace WebStore.Web.Mappings
                 cfg.CreateMap<Product, ProductViewModel>();
                 cfg.CreateMap<ProductTag, ProductTagViewModel>();
                 cfg.CreateMap<Post, PostViewModel>();
+                cfg.CreateMap<Footer, FooterViewModel>();
+                cfg.CreateMap<Slide, SlideViewModel>();
             });
         }
     }

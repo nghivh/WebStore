@@ -4018,6 +4018,80 @@
     <Content Include="Assets\admin\vendors\validator\index.html" />
     <Content Include="Assets\admin\vendors\validator\multifield.js" />
     <Content Include="Assets\admin\vendors\validator\validator.js" />
+    <Content Include="Assets\client\css\animate.css" />
+    <Content Include="Assets\client\css\bootstrap.min.css" />
+    <Content Include="Assets\client\css\font-awesome.min.css" />
+    <Content Include="Assets\client\css\main.css" />
+    <Content Include="Assets\client\css\prettyPhoto.css" />
+    <Content Include="Assets\client\css\price-range.css" />
+    <Content Include="Assets\client\css\responsive.css" />
+    <Content Include="Assets\client\images\404\404.png" />
+    <Content Include="Assets\client\images\blog\blog-one.jpg" />
+    <Content Include="Assets\client\images\blog\blog-three.jpg" />
+    <Content Include="Assets\client\images\blog\blog-two.jpg" />
+    <Content Include="Assets\client\images\blog\man-four.jpg" />
+    <Content Include="Assets\client\images\blog\man-one.jpg" />
+    <Content Include="Assets\client\images\blog\man-three.jpg" />
+    <Content Include="Assets\client\images\blog\man-two.jpg" />
+    <Content Include="Assets\client\images\blog\socials.png" />
+    <Content Include="Assets\client\images\cart\one.png" />
+    <Content Include="Assets\client\images\cart\three.png" />
+    <Content Include="Assets\client\images\cart\two.png" />
+    <Content Include="Assets\client\images\home\bg_border.png" />
+    <Content Include="Assets\client\images\home\gallery1.jpg" />
+    <Content Include="Assets\client\images\home\gallery2.jpg" />
+    <Content Include="Assets\client\images\home\gallery3.jpg" />
+    <Content Include="Assets\client\images\home\gallery4.jpg" />
+    <Content Include="Assets\client\images\home\girl1.jpg" />
+    <Content Include="Assets\client\images\home\girl2.jpg" />
+    <Content Include="Assets\client\images\home\girl3.jpg" />
+    <Content Include="Assets\client\images\home\iframe1.png" />
+    <Content Include="Assets\client\images\home\iframe2.png" />
+    <Content Include="Assets\client\images\home\iframe3.png" />
+    <Content Include="Assets\client\images\home\iframe4.png" />
+    <Content Include="Assets\client\images\home\logo.png" />
+    <Content Include="Assets\client\images\home\map.png" />
+    <Content Include="Assets\client\images\home\new.png" />
+    <Content Include="Assets\client\images\home\partner1.png" />
+    <Content Include="Assets\client\images\home\partner2.png" />
+    <Content Include="Assets\client\images\home\partner3.png" />
+    <Content Include="Assets\client\images\home\partner4.png" />
+    <Content Include="Assets\client\images\home\pricing.png" />
+    <Content Include="Assets\client\images\home\product1.jpg" />
+    <Content Include="Assets\client\images\home\product2.jpg" />
+    <Content Include="Assets\client\images\home\product3.jpg" />
+    <Content Include="Assets\client\images\home\product4.jpg" />
+    <Content Include="Assets\client\images\home\product5.jpg" />
+    <Content Include="Assets\client\images\home\product6.jpg" />
+    <Content Include="Assets\client\images\home\recommend1.jpg" />
+    <Content Include="Assets\client\images\home\recommend2.jpg" />
+    <Content Include="Assets\client\images\home\recommend3.jpg" />
+    <Content Include="Assets\client\images\home\sale.png" />
+    <Content Include="Assets\client\images\home\searchicon.png" />
+    <Content Include="Assets\client\images\home\shipping.jpg" />
+    <Content Include="Assets\client\images\product-details\1.jpg" />
+    <Content Include="Assets\client\images\product-details\new.jpg" />
+    <Content Include="Assets\client\images\product-details\rating.png" />
+    <Content Include="Assets\client\images\product-details\share.png" />
+    <Content Include="Assets\client\images\product-details\similar1.jpg" />
+    <Content Include="Assets\client\images\product-details\similar2.jpg" />
+    <Content Include="Assets\client\images\product-details\similar3.jpg" />
+    <Content Include="Assets\client\images\shop\advertisement.jpg" />
+    <Content Include="Assets\client\images\shop\product10.jpg" />
+    <Content Include="Assets\client\images\shop\product11.jpg" />
+    <Content Include="Assets\client\images\shop\product12.jpg" />
+    <Content Include="Assets\client\images\shop\product7.jpg" />
+    <Content Include="Assets\client\images\shop\product8.jpg" />
+    <Content Include="Assets\client\images\shop\product9.jpg" />
+    <Content Include="Assets\client\js\bootstrap.min.js" />
+    <Content Include="Assets\client\js\contact.js" />
+    <Content Include="Assets\client\js\gmaps.js" />
+    <Content Include="Assets\client\js\html5shiv.js" />
+    <Content Include="Assets\client\js\jquery.js" />
+    <Content Include="Assets\client\js\jquery.prettyPhoto.js" />
+    <Content Include="Assets\client\js\jquery.scrollUp.min.js" />
+    <Content Include="Assets\client\js\main.js" />
+    <Content Include="Assets\client\js\price-range.js" />
     <Content Include="Content\css\blank.gif" />
     <Content Include="Content\css\bootstrap-theme.css" />
     <Content Include="Content\css\bootstrap.css" />
@@ -5106,7 +5180,9 @@
     <Content Include="UploadFiles\images\lenovo-ideapad-100s-2-400x400.png" />
     <Content Include="UploadFiles\_thumbs\Images\asus-e402sa-n3050-2gb-500gb-win10-400-400x400.png" />
     <Content Include="UploadFiles\_thumbs\Images\lenovo-ideapad-100s-2-400x400.png" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Api\AccountController.cs" />
@@ -5120,7 +5196,11 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\Startup.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AboutController.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -5130,12 +5210,15 @@
     <Compile Include="Mappings\AutoMapperConfiguration.cs" />
     <Compile Include="Mappings\DomainToViewModelMappingProfile.cs" />
     <Compile Include="Mappings\ViewModelToDomainMappingProfile.cs" />
+    <Compile Include="Models\FooterViewModel.cs" />
+    <Compile Include="Models\HomeViewModel.cs" />
     <Compile Include="Models\PostCategoryViewModel.cs" />
     <Compile Include="Models\PostTagViewModel.cs" />
     <Compile Include="Models\PostViewModel.cs" />
     <Compile Include="Models\ProductCategoryViewModel.cs" />
     <Compile Include="Models\ProductTagViewModel.cs" />
     <Compile Include="Models\ProductViewModel.cs" />
+    <Compile Include="Models\SlideViewModel.cs" />
     <Compile Include="Models\TagViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Providers\ApplicationOAuthProvider.cs" />
@@ -6045,6 +6128,18 @@
     <Content Include="Assets\admin\vendors\toastr\toastr.scss" />
     <Content Include="Assets\admin\vendors\ckfinder\plugins\fileeditor\codemirror\LICENSE" />
     <Content Include="Assets\admin\vendors\ckfinder\userfiles\.htaccess" />
+    <Content Include="Views\Shared\Layouts.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Assets\client\fonts\fontawesome-webfont.svg" />
+    <Content Include="Assets\client\fonts\fontawesome-webfont.woff" />
+    <Content Include="Assets\client\fonts\FontAwesome.otf" />
+    <Content Include="Assets\client\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Assets\client\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Views\Shared\Sidebar.cshtml" />
+    <Content Include="Views\Shared\Footer.cshtml" />
+    <Content Include="Views\Shared\Header.cshtml" />
+    <Content Include="Views\Product\Category.cshtml" />
+    <Content Include="Views\Product\Detail.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -6054,8 +6149,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Assets\client\" />
     <Folder Include="UploadFiles\files\" />
+    <Folder Include="Views\About\" />
+    <Folder Include="Views\Account\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WebStore.Common\WebStore.Common.csproj">

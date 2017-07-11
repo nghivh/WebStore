@@ -34,6 +34,7 @@ namespace WebStore.Data.Migrations
             InitialPostCategory(context);
             InitialProductCategory(context);
             //InitialUserLogin(context);
+            InitialSlides(context);
         }
 
         private void InitialPostCategory(WebStoreDbContext context)
@@ -53,7 +54,7 @@ namespace WebStore.Data.Migrations
 
         private void InitialProductCategory(WebStoreDbContext context)
         {
-            if(context.ProductCategories.Count() == 0)
+            if (context.ProductCategories.Count() == 0)
             {
                 List<ProductCategory> list = new List<ProductCategory>()
                 {
@@ -93,6 +94,49 @@ namespace WebStore.Data.Migrations
             var adminUser = manager.FindByEmail("nghivh.qt@gmail.com");
 
             manager.AddToRoles(adminUser.Id, new string[] { "Admin", "User" });
+        }
+
+        private void InitialSlides(WebStoreDbContext context)
+        {
+            if (context.Slides.Count() == 0)
+            {
+                List<Slide> slides = new List<Slide>()
+                {
+                    new Slide()
+                    {
+                        Name = "<span>E</span>-SHOPPER",
+                        Description = "Free E-Commerce Template",
+                        Image = "/Assets/client/images/home/girl1.jpg",
+                        Url = "#",
+                        DisplayOrder = 1,
+                        Status = true,
+                        Content = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                    },
+                    new Slide()
+                    {
+                        Name = "<span>E</span>-SHOPPER",
+                        Description = "100% Responsive Design",
+                        Image = "/Assets/client/images/home/girl2.jpg",
+                        Url = "#",
+                        DisplayOrder = 2,
+                        Status = true,
+                        Content = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                    },
+                    new Slide()
+                    {
+                        Name = "<span>E</span>-SHOPPER",
+                        Description = "Free Ecommerce Template",
+                        Image = "/Assets/client/images/home/girl3.jpg",
+                        Url = "#",
+                        DisplayOrder = 3,
+                        Status = true,
+                        Content = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                    }
+                };
+
+                context.Slides.AddRange(slides);
+                context.SaveChanges();
+            }
         }
     }
 }
